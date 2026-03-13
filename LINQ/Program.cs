@@ -67,6 +67,24 @@ namespace LINQ
                              where (num % 2) == 0
                              select num).ToArray();
         }
+
+        static void exampleFive()
+        {
+            List<int> numbers = [1, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20];
+
+            IEnumerable<int> queryFactorsOfFour = from num in numbers
+                                                  where num % 4 == 0
+                                                  select num;
+
+            // Store the results in a new variable
+            // without executing a foreach loop.
+            var factorsofFourList = queryFactorsOfFour.ToList();
+
+            // Read and write from the newly created list to demonstrate that it holds data.
+            Console.WriteLine(factorsofFourList[2]);
+            factorsofFourList[2] = 0;
+            Console.WriteLine(factorsofFourList[2]);
+        }
     }
 }
 
