@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwordDamage", "SwordDamage\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQ", "LINQ\LINQ.csproj", "{EC277471-4017-4AC1-AD76-FEA2059C52DD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalkthroughWritingLinqQueries", "WalkthroughWritingLinqQueries\WalkthroughWritingLinqQueries.csproj", "{40F9B889-4AF3-421C-BC5E-D00D262CA343}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{EC277471-4017-4AC1-AD76-FEA2059C52DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC277471-4017-4AC1-AD76-FEA2059C52DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC277471-4017-4AC1-AD76-FEA2059C52DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40F9B889-4AF3-421C-BC5E-D00D262CA343}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40F9B889-4AF3-421C-BC5E-D00D262CA343}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40F9B889-4AF3-421C-BC5E-D00D262CA343}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40F9B889-4AF3-421C-BC5E-D00D262CA343}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
