@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatchGame", "MatchGame\Matc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwordDamage", "SwordDamage\SwordDamage.csproj", "{D8D9E041-6C1A-45E5-928C-105E8109B6DD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQ", "LINQ\LINQ.csproj", "{EC277471-4017-4AC1-AD76-FEA2059C52DD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{D8D9E041-6C1A-45E5-928C-105E8109B6DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8D9E041-6C1A-45E5-928C-105E8109B6DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8D9E041-6C1A-45E5-928C-105E8109B6DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC277471-4017-4AC1-AD76-FEA2059C52DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC277471-4017-4AC1-AD76-FEA2059C52DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC277471-4017-4AC1-AD76-FEA2059C52DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC277471-4017-4AC1-AD76-FEA2059C52DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
