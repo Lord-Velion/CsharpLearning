@@ -85,6 +85,54 @@ namespace LINQ
             factorsofFourList[2] = 0;
             Console.WriteLine(factorsofFourList[2]);
         }
+
+        static void exampleSix()
+        {
+            // Data source.
+            int[] scores = [90, 71, 82, 93, 75, 82];
+
+            // Query Expression.
+            IEnumerable<int> scoreQuery = //query variable
+                from score in scores //required
+                where score > 80 // optional
+                orderby score descending // optional
+                select score; //must end with select or group
+
+            // Execute the query to produce the results
+            foreach (var testScore in scoreQuery)
+            {
+                Console.WriteLine(testScore);
+            }
+
+            // Output: 93 90 82 82
+        }
+
+        static void exampleSeven()
+        {
+            int[] numbers = [5, 10, 8, 3, 6, 12];
+
+            //Query syntax:
+            IEnumerable<int> numQuery1 =
+                from num in numbers
+                where num % 2 == 0
+                orderby num
+                select num;
+
+            //Method syntax:
+            IEnumerable<int> numQuery2 = numbers
+                .Where(num => num % 2 == 0)
+                .OrderBy(n => n);
+
+            foreach (int i in numQuery1)
+            {
+                Console.Write(i + " ");
+            }
+            Console.WriteLine(System.Environment.NewLine);
+            foreach (int i in numQuery2)
+            {
+                Console.Write(i + " ");
+            }
+        }
     }
 }
 
