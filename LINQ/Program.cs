@@ -6,7 +6,7 @@ namespace LINQ
     {
         static void Main(string[] args)
         {
-            exampleTwo();
+            exampleThree();
         }
 
         static void exampleOne()
@@ -41,6 +41,18 @@ namespace LINQ
             {
                 Console.WriteLine("{0,1} ", num);
             }
+        }
+
+        static void exampleThree()
+        {
+            int[] numbers = [0, 1, 2, 3, 4, 5, 6];
+            var evenNumQuery = from num in numbers
+                               where (num % 2) == 0
+                               select num;
+
+            int evenNumCount = evenNumQuery.Count();
+
+            Console.WriteLine(evenNumCount);
         }
     }
 }
