@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace LINQ
 {
@@ -6,7 +7,7 @@ namespace LINQ
     {
         static void Main(string[] args)
         {
-            select_Methods();
+            zip();
         }
 
         static void filteringData_Keywords()
@@ -87,7 +88,29 @@ namespace LINQ
             }
         }
 
+        static void zip()
+        {
+            IEnumerable<int> numbers = [1, 2, 3, 4, 5, 6, 7];
+            IEnumerable<char> letters = ['A', 'B', 'C', 'D', 'E', 'F'];
 
+            foreach ((int number, char letter) in numbers.Zip(letters))
+            {
+                Console.WriteLine($"Number: {number} zipped with letter: '{letter}'");
+            }
+
+            IEnumerable<string> emoji = ["🤓", "🔥", "🎉", "👀", "⭐", "💜", "✔", "💯"];
+
+            foreach ((int number, char letter, string em) in numbers.Zip(letters, emoji))
+            {
+                Console.WriteLine(
+                    $"Number: {number} is zipped with letter: '{letter}' and emoji: {em}");
+            }
+
+            foreach (string result in numbers.Zip(letters, (number, letter) => $"{number} = {letter} ({(int)letter})"))
+            {
+                Console.WriteLine(result);
+            }
+        }
     }
 }
 
