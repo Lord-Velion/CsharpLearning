@@ -7,7 +7,7 @@ namespace LINQ
     {
         static void Main(string[] args)
         {
-            Except();
+            Intersect();
         }
 
         static void filteringData_Keywords()
@@ -237,7 +237,33 @@ namespace LINQ
             } */
         }
 
+        static void Intersect()
+        {
+            string[] words1 = ["the", "quick", "brown", "fox"];
+            string[] words2 = ["jumped", "over", "the", "lazy", "dog"];
 
+            IEnumerable<string> query = from word in words1.Intersect(words2)
+                                        select word;
+
+            foreach (var str in query)
+            {
+                Console.WriteLine(str);
+            }
+        }
+
+        static void Union()
+        {
+            string[] words1 = ["the", "quick", "brown", "fox"];
+            string[] words2 = ["jumped", "over", "the", "lazy", "dog"];
+
+            IEnumerable<string> query = from word in words1.Union(words2)
+                                        select word;
+
+            foreach (var str in query)
+            {
+                Console.WriteLine(str);
+            }
+        }
     }
 }
 
