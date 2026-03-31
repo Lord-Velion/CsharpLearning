@@ -7,7 +7,7 @@ namespace LINQ
     {
         static void Main(string[] args)
         {
-            SelectVsSelectMany();
+            Except();
         }
 
         static void filteringData_Keywords()
@@ -147,6 +147,97 @@ namespace LINQ
                 Console.WriteLine(item);
             }
         }
+
+        static void Distinct()
+        {
+            string[] words = ["the", "quick", "brown", "fox", "jumped", "over", "the", "lazy", "dog"];
+
+            IEnumerable<string> query = from word in words.Distinct()
+                                        select word;
+
+            foreach (var str in query)
+            {
+                Console.WriteLine(str);
+            }
+
+            Console.WriteLine("----------------");
+
+            foreach (string word in words.DistinctBy(p => p.Length))
+            {
+                Console.WriteLine(word);
+            }
+        }
+
+        public enum GradeLevel
+        {
+            FirstYear = 1,
+            SecondYear,
+            ThirdYear,
+            FourthYear
+        };
+
+        public class Student
+        {
+            public required string FirstName { get; init; }
+            public required string LastName { get; init; }
+            public required int ID { get; init; }
+
+            public required GradeLevel Year { get; init; }
+            public required List<int> Scores { get; init; }
+
+            public required int DepartmentID { get; init; }
+        }
+
+        public class Teacher
+        {
+            public required string First { get; init; }
+            public required string Last { get; init; }
+            public required int ID { get; init; }
+            public required string City { get; init; }
+        }
+
+        public class Department
+        {
+            public required string Name { get; init; }
+            public int ID { get; init; }
+
+            public required int TeacherID { get; init; }
+        }
+
+        static void Except()
+        {
+            string[] words1 = ["the", "quick", "brown", "fox"];
+            string[] words2 = ["jumped", "over", "the", "lazy", "dog"];
+
+            IEnumerable<string> query = from word in words1.Except(words2)
+                                        select word;
+
+            foreach (var str in query)
+            {
+                Console.WriteLine(str);
+            }
+        }
+
+        static void ExceptBy()
+        {
+            /*
+            int[] teachersToExclude =
+            [
+                901,    // English
+                965,    // Mathematics
+                932,    // Engineering
+                945,    // Economics
+                987,    // Physics
+                901     // Chemistry
+            ];
+
+            foreach (Teacher teacher in teachers.ExceptBy(teachersToExclude, teacher => teacher.ID))
+            {
+                Console.WriteLine($"{teacher.First} {teacher.Last}");
+            } */
+        }
+
+
     }
 }
 
