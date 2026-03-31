@@ -6,10 +6,10 @@ namespace LINQ
     {
         static void Main(string[] args)
         {
-            filteringData_1();
+            select_Methods();
         }
 
-        static void filteringData_1()
+        static void filteringData_Keywords()
         {
             string[] words = ["the", "quick", "brown", "fox", "jumps"];
 
@@ -23,7 +23,7 @@ namespace LINQ
             }
         }
 
-        static void filteringData_2()
+        static void filteringData_Methods()
         {
             string[] words = ["the", "quick", "brown", "fox", "jumps"];
 
@@ -36,7 +36,30 @@ namespace LINQ
             }
         }
 
-              
+        static void select_Keywords()
+        {
+            List<string> words = ["an", "apple", "a", "day"];
+
+            var query = from word in words
+                        select word.Substring(0, 1);
+
+            foreach (string s in query)
+            {
+                Console.WriteLine(s);
+            }
+        }  
+
+        static void select_Methods()
+        {
+            List<string> words = ["an", "apple", "a", "day"];
+
+            var query = words.Select(word => word.Substring(0, 1));
+
+            foreach (string s in query)
+            {
+                Console.WriteLine(s);
+            }
+        }
     }
 }
 
