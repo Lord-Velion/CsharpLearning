@@ -60,6 +60,34 @@ namespace LINQ
                 Console.WriteLine(s);
             }
         }
+
+        static void selectMany_Keywords()
+        {
+            List<string> phrases = ["an apple a day", "the quick brown fox"];
+
+            var query = from phrase in phrases
+                        from word in phrase.Split(' ')
+                        select word;
+
+            foreach (string s in query)
+            {
+                Console.WriteLine(s);
+            }
+        }
+
+        static void selectMany_Methods()
+        {
+            List<string> phrases = ["an apple a day", "the quick brown fox"];
+
+            var query = phrases.SelectMany(phrase => phrase.Split(' '));
+
+            foreach (string s in query)
+            {
+                Console.WriteLine(s);
+            }
+        }
+
+
     }
 }
 
