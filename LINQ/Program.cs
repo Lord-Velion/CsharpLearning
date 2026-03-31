@@ -7,7 +7,7 @@ namespace LINQ
     {
         static void Main(string[] args)
         {
-            zip();
+            SelectVsSelectMany();
         }
 
         static void filteringData_Keywords()
@@ -109,6 +109,42 @@ namespace LINQ
             foreach (string result in numbers.Zip(letters, (number, letter) => $"{number} = {letter} ({(int)letter})"))
             {
                 Console.WriteLine(result);
+            }
+        }
+
+        class Bouquet
+        {
+            public required List<string> Flowers { get; init; }
+        }
+
+        static void SelectVsSelectMany()
+        {
+            List<Bouquet> bouquets =
+            [
+                new Bouquet { Flowers = ["sunflower", "daisy", "daffodil", "larkspur"] },
+        new Bouquet { Flowers = ["tulip", "rose", "orchid"] },
+        new Bouquet { Flowers = ["gladiolis", "lily", "snapdragon", "aster", "protea"] },
+        new Bouquet { Flowers = ["larkspur", "lilac", "iris", "dahlia"] }
+            ];
+
+            IEnumerable<List<string>> query1 = bouquets.Select(bq => bq.Flowers);
+
+            IEnumerable<string> query2 = bouquets.SelectMany(bq => bq.Flowers);
+
+            Console.WriteLine("Results by using Select():");
+            // Note the extra foreach loop here.
+            foreach (IEnumerable<string> collection in query1)
+            {
+                foreach (string item in collection)
+                {
+                    Console.WriteLine(item);
+                }
+            }
+
+            Console.WriteLine("\nResults by using SelectMany():");
+            foreach (string item in query2)
+            {
+                Console.WriteLine(item);
             }
         }
     }
